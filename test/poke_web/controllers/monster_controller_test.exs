@@ -4,12 +4,8 @@ defmodule PokeWeb.MonsterControllerTest do
   alias Poke.Pokemon
   alias Poke.Pokemon.Monster
 
-  @create_attrs %{
-
-  }
-  @update_attrs %{
-
-  }
+  @create_attrs %{}
+  @update_attrs %{}
   @invalid_attrs %{}
 
   def fixture(:monster) do

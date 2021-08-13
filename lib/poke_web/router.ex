@@ -12,6 +12,6 @@ defmodule PokeWeb.Router do
   scope "/api/v2", PokeWeb do
     pipe_through :api
 
-    resources "/monsters", MonsterController, only: [:show]
+    resources "/pokemon", PokemonController, only: [:show]
   end
 end

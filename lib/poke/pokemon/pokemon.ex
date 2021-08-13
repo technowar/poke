@@ -1,6 +1,8 @@
 defmodule Poke.Pokemon do
+  alias Poke.PokemonServices
+
   @moduledoc """
-  The Pokemon context.
+  Pokemon context.
   """
 
   @doc """
@@ -12,5 +14,7 @@ defmodule Poke.Pokemon do
       returns id
 
   """
-  def get_monster!(id), do: id
+  def get_pokemon!(id) do
+    PokemonServices.get_pokemon_from_api(id)
+  end
 end
