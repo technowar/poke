@@ -5,7 +5,9 @@ defmodule PokeWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", PokeWeb do
+  scope "/api/v2", PokeWeb do
     pipe_through :api
+
+    get "/monsters/:id", MonsterController, :show
   end
 end
