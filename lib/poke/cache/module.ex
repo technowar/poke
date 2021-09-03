@@ -1,6 +1,6 @@
-defmodule Poke.CacheModule do
+defmodule Poke.Cache.Module do
   @moduledoc """
-  CacheModule context.
+  Cache.Module context.
   """
 
   def cache_app do

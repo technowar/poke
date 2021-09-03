@@ -9,6 +9,6 @@ defmodule Poke.Pokemon do
   Gets a single monster.
   """
   def get_pokemon!(id) do
-    Services.get_pokemon_from_api(id)
+    Services.Pokemon.get_pokemon_from_api(id)
   end
 end

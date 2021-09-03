@@ -1,14 +1,14 @@
-defmodule Poke.PokemonWarmer do
+defmodule Poke.Cache.AppWarmer do
   @moduledoc """
-  PokemonWarmer context.
+  Cache.AppWarmer context.
   """
 
   use Cachex.Warmer
-  alias Poke.CacheModule
+  alias Poke.Cache
 
   def interval, do: :timer.hours(1)
 
   def execute(_args) do
-    CacheModule.cache_app()
+    Cache.Module.cache_app()
   end
 end

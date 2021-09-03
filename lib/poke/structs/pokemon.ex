@@ -1,6 +1,6 @@
-defmodule Poke.Structs do
+defmodule Poke.Structs.Pokemon do
   @moduledoc """
-  Pokemon structs context.
+  Structs.Pokemon context.
   """
 
   @derive {Jason.Encoder, only: [:height, :id, :name, :stats, :types, :weight]}

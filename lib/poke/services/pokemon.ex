@@ -1,12 +1,10 @@
-defmodule Poke.Services do
+defmodule Poke.Services.Pokemon do
   @moduledoc """
-  Pokemon services context.
+  Services.Pokemon context.
   """
 
   alias Poke.Helpers
   alias Poke.Structs
-
-  @pokemon_endpoint "https://pokeapi.co/api/v2/pokemon/"
 
   @doc """
   Fetch Pokemon from Pokeapi.
@@ -14,7 +12,7 @@ defmodule Poke.Services do
   ## Examples
 
       iex> get_pokemon_from_api(1)
-      returns %{status: 200, message: "success", data: %Structs{}}
+      returns %{status: 200, message: "success", data: %Structs.Pokemon{}}
 
       iex> get_pokemon_from_api("x")
       returns %{status: 500, message: "Remote Bad Response"}
@@ -27,7 +25,7 @@ defmodule Poke.Services do
 
   """
   def get_pokemon_from_api(param) do
-    endpoint = Helpers.create_endpoint(%{endpoint: @pokemon_endpoint, param: param})
+    endpoint = Helpers.create_endpoint(%{endpoint: Helpers.get_key(:pokemon_endpoint), param: param})
 
     case HTTPoison.get(endpoint) do
       {:ok, %{status_code: 200, body: body}} ->
@@ -36,7 +34,7 @@ defmodule Poke.Services do
             %{
               status: 200,
               message: "success",
-              data: Structs.pokemon(response)
+              data: Structs.Pokemon.pokemon(response)
             }
 
           {:error, _} ->

@@ -12,12 +12,12 @@ defmodule Poke.Application do
       Supervisor.child_spec(
         {
           Cachex,
-          name: :pokemon,
+          name: :poke,
           warmers: [
-            warmer(module: Poke.PokemonWarmer, state: "")
+            warmer(module: Poke.Cache.AppWarmer, state: "")
           ]
         },
-        id: :pokemon
+        id: :poke
       ),
       # Start the Telemetry supervisor
       PokeWeb.Telemetry,
