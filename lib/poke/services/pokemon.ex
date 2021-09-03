@@ -1,12 +1,12 @@
 defmodule Poke.Services do
+  @moduledoc """
+  Pokemon services context.
+  """
+
   alias Poke.Helpers
   alias Poke.Structs
 
   @pokemon_endpoint "https://pokeapi.co/api/v2/pokemon/"
-
-  @moduledoc """
-  Pokemon services context.
-  """
 
   @doc """
   Fetch Pokemon from Pokeapi.

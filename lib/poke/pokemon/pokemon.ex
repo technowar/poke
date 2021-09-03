@@ -1,9 +1,9 @@
 defmodule Poke.Pokemon do
-  alias Poke.Services
-
   @moduledoc """
   Pokemon context.
   """
+
+  alias Poke.Services
 
   @doc """
   Gets a single monster.

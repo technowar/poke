@@ -6,7 +6,19 @@ defmodule Poke.Application do
   use Application
 
   def start(_type, _args) do
+    import Cachex.Spec
+
     children = [
+      Supervisor.child_spec(
+        {
+          Cachex,
+          name: :pokemon,
+          warmers: [
+            warmer(module: Poke.PokemonWarmer, state: "")
+          ]
+        },
+        id: :pokemon
+      ),
       # Start the Telemetry supervisor
       PokeWeb.Telemetry,
       # Start the PubSub system
