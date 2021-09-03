@@ -19,6 +19,7 @@ defmodule Poke.Application do
         },
         id: :poke
       ),
+      Supervisor.child_spec({Cachex, name: :pokemon}, id: :pokemon),
       # Start the Telemetry supervisor
       PokeWeb.Telemetry,
       # Start the PubSub system

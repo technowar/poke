@@ -24,6 +24,7 @@ config :logger, :console,
 config :phoenix, :json_library, Jason
 
 config :poke, :pokemon_endpoint, "https://pokeapi.co/api/v2/pokemon/"
+config :poke, :pokemon_evolution_endpoint, "https://pokeapi.co/api/v2/evolution-chain/"
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
